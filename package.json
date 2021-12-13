@@ -6,7 +6,9 @@
   "scripts": {
     "start": "webpack serve --config ./webpack.config.js --mode development --port 3000",
     "lint": "eslint src",
-    "test": "jest --testRegex=\"[^\\.]+\\.spec\\.js$\""
+    "test": "jest --testRegex=\"[^\\.]+\\.spec\\.js$\"",
+    "storybook": "env NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +21,10 @@
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
     "@babel/preset-react": "^7.16.0",
+    "@storybook/addon-actions": "^6.4.9",
+    "@storybook/addon-essentials": "^6.4.9",
+    "@storybook/addon-links": "^6.4.9",
+    "@storybook/react": "^6.4.9",
     "@testing-library/react": "^12.1.2",
     "babel-jest": "^27.4.4",
     "babel-loader": "^8.2.3",
