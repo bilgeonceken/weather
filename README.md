@@ -5,3 +5,7 @@ $ nvm use
 $ yarn
 $ yarn start
 ```
+###  Run Tests
+```
+$ yarn test
+```
