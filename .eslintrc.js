@@ -25,5 +25,6 @@ module.exports = {
     'arrow-body-style': 0,
     'react/function-component-definition': 0,
     'react/react-in-jsx-scope': 'off',
+    'import/prefer-default-export': 'off',
   },
 };
