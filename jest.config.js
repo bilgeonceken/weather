@@ -2,7 +2,7 @@
 /** @type {import('@jest/types').Config.InitialOptions} */
 const config = {
   verbose: true,
-  "testEnvironment": "jsdom"
+  testEnvironment: 'jsdom',
 };
 
 module.exports = config;
@@ -11,6 +11,6 @@ module.exports = config;
 module.exports = async () => {
   return {
     verbose: true,
-    "testEnvironment": "jsdom"
+    testEnvironment: 'jsdom',
   };
 };
