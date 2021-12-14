@@ -6,7 +6,7 @@ import { weatherDataMap, WEATHER_TYPES } from '../utils/constants';
 const ScWeatherCard = styled.div`
   display: flex;
   flex-direction: column;
-  width: 212px;
+  min-width: 212px;
   height: 400px;
   align-items: center;
   justify-content: space-between;

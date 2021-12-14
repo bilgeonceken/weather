@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     margin: 0;
+    background: #3B3F69;
     /* https://css-tricks.com/snippets/css/system-font-stack/ */
     font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   }
