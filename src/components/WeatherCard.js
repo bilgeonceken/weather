@@ -14,7 +14,7 @@ const ScWeatherCard = styled.div`
   justify-content: space-between;
   padding: 32px 0;
   border-radius: 6px;
-  background: ${({ isActive }) => (isActive ? '#51557A' : '#3B3F69')};
+  background: ${({ isActive }) => (isActive ? '#51557A' : '#262A59')};
 
   &:hover {
     background: ${({ isActive }) => (isActive ? '#51557A' : '#434668')};;

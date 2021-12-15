@@ -18,6 +18,7 @@ const ScForecast = styled.div`
       justify-content: space-between;
       flex-basis: 100%;
       max-width: 1627px;
+      padding: 30px 20px 0 20px;
 
       .fcIcon {
         max-width: 328px;
@@ -55,14 +56,14 @@ const ScForecast = styled.div`
 
         .fcDate {
           font-size: 99.068px;
-          max-width: 566px;
+          max-width: 530px;
         }
       }
     }
 
     .fcLower {
       max-height: 410px;
-      margin-top: 156px;
+      margin-top: 126px;
       display: flex;
       overflow-x: auto;
 
