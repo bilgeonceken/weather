@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import WeatherCard from '../WeatherCard';
 import { weatherDataMap } from '../../utils/constants';
 import { getActiveForecast, getForecastsSelector } from '../../store/selectors';
+import { setActiveForecastAction } from '../../store/actionCreators';
 
 const ScForecast = styled.div`
   color: white;
@@ -12,7 +13,6 @@ const ScForecast = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 5% 0;
     .fcUpper {
       display: flex;
       justify-content: space-between;
@@ -78,15 +78,14 @@ const ScForecast = styled.div`
 `;
 
 const Forecast = () => {
-  const {
-    activeForecast, weatherData, isLoading,
-  } = useSelector(getForecastsSelector);
-  const {
-    temp, tempMin, tempMax, weather, date, location,
-  } = useSelector(getActiveForecast);
+  const dispatch = useDispatch();
+
+  const { activeForecast, weatherData, isLoading } = useSelector(getForecastsSelector);
+  const { temp, tempMin, tempMax, weather, date, location } = useSelector(getActiveForecast);
   const weatherConstants = weatherDataMap[weather] || {};
   const { text: weatherText, icon: weatherIcon } = weatherConstants;
 
+  const handleWeatherCardClick = (order) => dispatch(setActiveForecastAction({ order }));
   if (isLoading) return (<div>Loading</div>);
   return (
     <ScForecast>
@@ -108,13 +107,16 @@ const Forecast = () => {
           </div>
         </div>
         <div className="fcLower">
-          {weatherData.map(({ temp, time, weather }, key) => {
+          {weatherData.map(({ temp, time, weather, id, order }, key) => {
             return (
               <WeatherCard
+                key={id}
+                order={order}
                 temperature={temp}
                 time={time}
                 weather={weather}
                 isActive={key === activeForecast}
+                onClick={handleWeatherCardClick}
               />
             );
           })}

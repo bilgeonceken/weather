@@ -13,9 +13,10 @@ export function* watchFetchForecast() {
   const { city: { name: location }, list } = yield call(fetchForecast);
   const convertKtoC = (temperature) => Math.floor(temperature - 273.15);
   const weatherData = list.map(({
+    dt: id,
     main: { temp, temp_min: tempMin, temp_max: tempMax }, weather: [{ main: weather }],
     dt_txt: datetime,
-  }) => {
+  }, key) => {
     const time = datetime.split(' ')[1];
     const date = new Date(datetime);
     // possibly not the best way to get de-DE date format in english
@@ -23,6 +24,8 @@ export function* watchFetchForecast() {
     const [weekday, month, day] = readableDateString.replace(',', '').split(' ');
     const formattedDate = `${weekday} ${day}. ${month}`;
     return {
+      id: `${id}`,
+      order: key,
       temp: convertKtoC(temp),
       tempMin: convertKtoC(tempMin),
       tempMax: convertKtoC(tempMax),

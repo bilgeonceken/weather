@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  bool, oneOf, string, number,
+  bool, oneOf, string, number, func,
 } from 'prop-types';
 import styled from 'styled-components';
 import { weatherDataMap, WEATHER_TYPES } from '../utils/constants';
@@ -15,6 +15,10 @@ const ScWeatherCard = styled.div`
   padding: 32px 0;
   border-radius: 6px;
   background: ${({ isActive }) => (isActive ? '#51557A' : '#3B3F69')};
+
+  &:hover {
+    background: ${({ isActive }) => (isActive ? '#51557A' : '#434668')};;
+  }
 
   img {
     width: 120px;
@@ -41,11 +45,12 @@ const ScWeatherCard = styled.div`
 `;
 
 const WeatherCard = ({
-  time, weather, temperature, isActive,
+  time, weather, temperature, isActive, onClick, order,
 }) => {
   const { icon, text } = weatherDataMap[weather];
+  const handleClick = () => onClick(order);
   return (
-    <ScWeatherCard isActive={isActive}>
+    <ScWeatherCard onClick={handleClick} isActive={isActive}>
       <span className="timestamp">{time}</span>
       <img alt={`${text} Icon`} src={icon} />
       <p>{`${temperature}°`}</p>
@@ -58,6 +63,8 @@ WeatherCard.propTypes = {
   weather: oneOf(Object.keys(WEATHER_TYPES)),
   temperature: number,
   isActive: bool,
+  onClick: func,
+  order: number,
 };
 
 WeatherCard.defaultProps = {
@@ -65,6 +72,8 @@ WeatherCard.defaultProps = {
   weather: WEATHER_TYPES.Clear,
   temperature: 6,
   isActive: false,
+  onClick: (f) => f,
+  order: 0,
 };
 
 export default WeatherCard;
