@@ -61,15 +61,15 @@ const Header = () => {
       <img className="fcIcon" alt={`${weatherText} Icon`} src={weatherIcon} />
       <div className="fcCenter">
         <div className="fcDataUpper">
-          <div className="fcWeather">{weather}</div>
+          <div data-testid="fcWeather" className="fcWeather">{weather}</div>
           <div className="fcHighLow">{`${tempMin}°/${tempMax}°`}</div>
         </div>
-        <div className="fcTempCurrent">
+        <div data-testid="fcTempCurrent" className="fcTempCurrent">
           {`${temp}°`}
         </div>
       </div>
       <div className="fcRight">
-        <div className="fcLocation">{location}</div>
+        <div data-testid="fcLocation" className="fcLocation">{location}</div>
         <div className="fcDate">{date}</div>
       </div>
     </ScHeader>

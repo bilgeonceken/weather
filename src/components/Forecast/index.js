@@ -88,7 +88,7 @@ const Forecast = () => {
     <ScForecast>
       <div className="mainWrapper">
         <Header />
-        <div className="fcLower">
+        <div data-testid="weatherCardList" className="fcLower">
           {weatherData.map(({ temp, time, weather, id, order }, key) => {
             return (
               <WeatherCard
