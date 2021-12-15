@@ -1,4 +1,5 @@
-# weather
+# Weather App
+Displays weather forecast from a static resource
 ###  Start in development mode
 ```
 $ nvm use
