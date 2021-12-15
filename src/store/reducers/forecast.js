@@ -4,6 +4,7 @@ const initialState = {
   isLoading: true,
   hasError: false,
   location: '',
+  activeForecast: 0,
   weatherData: [],
 };
 
@@ -24,6 +25,7 @@ const ForecastReducer = (state = initialState, action) => {
         ...state,
         location,
         weatherData,
+        activeForecast: 0,
         isLoading: false,
       };
     }
