@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
-import WeatherCard from '../WeatherCard';
-import { weatherDataMap } from '../../utils/constants';
-import { getActiveForecast, getForecastsSelector } from '../../store/selectors';
+import WeatherCard from './WeatherCard';
+import { getForecastsSelector } from '../../store/selectors';
 import { setActiveForecastAction } from '../../store/actionCreators';
+import Header from './Header';
 
 const ScForecast = styled.div`
   color: white;
@@ -80,33 +80,14 @@ const ScForecast = styled.div`
 
 const Forecast = () => {
   const dispatch = useDispatch();
-
   const { activeForecast, weatherData, isLoading } = useSelector(getForecastsSelector);
-  const { temp, tempMin, tempMax, weather, date, location } = useSelector(getActiveForecast);
-  const weatherConstants = weatherDataMap[weather] || {};
-  const { text: weatherText, icon: weatherIcon } = weatherConstants;
 
   const handleWeatherCardClick = (order) => dispatch(setActiveForecastAction({ order }));
   if (isLoading) return (<div>Loading</div>);
   return (
     <ScForecast>
       <div className="mainWrapper">
-        <div className="fcUpper">
-          <img className="fcIcon" alt={`${weatherText} Icon`} src={weatherIcon} />
-          <div className="fcCenter">
-            <div className="fcDataUpper">
-              <div className="fcWeather">{weather}</div>
-              <div className="fcHighLow">{`${tempMin}°/${tempMax}°`}</div>
-            </div>
-            <div className="fcTempCurrent">
-              {`${temp}°`}
-            </div>
-          </div>
-          <div className="fcRight">
-            <div className="fcLocation">{location}</div>
-            <div className="fcDate">{date}</div>
-          </div>
-        </div>
+        <Header />
         <div className="fcLower">
           {weatherData.map(({ temp, time, weather, id, order }, key) => {
             return (
