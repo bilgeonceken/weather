@@ -28,5 +28,6 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'default-param-last': 0,
     'consistent-return': 0,
+    'no-shadow': 0,
   },
 };

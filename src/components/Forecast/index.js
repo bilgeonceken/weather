@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { weatherDataMap, WEATHER_TYPES } from '../../utils/constants';
+import { useSelector } from 'react-redux';
 import WeatherCard from '../WeatherCard';
+import { weatherDataMap } from '../../utils/constants';
+import { getActiveForecast, getForecastsSelector } from '../../store/selectors';
 
 const ScForecast = styled.div`
   color: white;
@@ -76,24 +78,28 @@ const ScForecast = styled.div`
 `;
 
 const Forecast = () => {
-  // dummyData
-  const weatherType = WEATHER_TYPES.Clear;
-  const { text, icon } = weatherDataMap[weatherType];
-  const location = 'Munich';
-  const date = 'Thursday 28. March';
+  const {
+    activeForecast, weatherData, isLoading,
+  } = useSelector(getForecastsSelector);
+  const {
+    temp, tempMin, tempMax, weather, date, location,
+  } = useSelector(getActiveForecast);
+  const weatherConstants = weatherDataMap[weather] || {};
+  const { text: weatherText, icon: weatherIcon } = weatherConstants;
 
+  if (isLoading) return (<div>Loading</div>);
   return (
     <ScForecast>
       <div className="mainWrapper">
         <div className="fcUpper">
-          <img className="fcIcon" alt={`${text} Icon`} src={icon} />
+          <img className="fcIcon" alt={`${weatherText} Icon`} src={weatherIcon} />
           <div className="fcCenter">
             <div className="fcDataUpper">
-              <div className="fcWeather">{text}</div>
-              <div className="fcHighLow">{`${'12'}°/${'17'}°`}</div>
+              <div className="fcWeather">{weather}</div>
+              <div className="fcHighLow">{`${tempMin}°/${tempMax}°`}</div>
             </div>
             <div className="fcTempCurrent">
-              {`${'12'}°`}
+              {`${temp}°`}
             </div>
           </div>
           <div className="fcRight">
@@ -102,21 +108,16 @@ const Forecast = () => {
           </div>
         </div>
         <div className="fcLower">
-          <WeatherCard />
-          <WeatherCard isActive />
-          <WeatherCard />
-          <WeatherCard />
-          <WeatherCard />
-          <WeatherCard />
-          <WeatherCard />
-          <WeatherCard />
-          <WeatherCard />
-          <WeatherCard />
-          <WeatherCard />
-          <WeatherCard />
-          <WeatherCard />
-          <WeatherCard />
-          <WeatherCard />
+          {weatherData.map(({ temp, time, weather }, key) => {
+            return (
+              <WeatherCard
+                temperature={temp}
+                time={time}
+                weather={weather}
+                isActive={key === activeForecast}
+              />
+            );
+          })}
         </div>
       </div>
     </ScForecast>

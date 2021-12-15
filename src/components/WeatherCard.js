@@ -1,5 +1,7 @@
 import React from 'react';
-import { bool, oneOf, string } from 'prop-types';
+import {
+  bool, oneOf, string, number,
+} from 'prop-types';
 import styled from 'styled-components';
 import { weatherDataMap, WEATHER_TYPES } from '../utils/constants';
 
@@ -54,14 +56,14 @@ const WeatherCard = ({
 WeatherCard.propTypes = {
   time: string,
   weather: oneOf(Object.keys(WEATHER_TYPES)),
-  temperature: string,
+  temperature: number,
   isActive: bool,
 };
 
 WeatherCard.defaultProps = {
   time: '00:00',
   weather: WEATHER_TYPES.Clear,
-  temperature: '6',
+  temperature: 6,
   isActive: false,
 };
 
