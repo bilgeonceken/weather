@@ -11,6 +11,7 @@ const WeatherCardList = ({ items, activeForecast, onWeatherCardClick }) => {
         return (
           <WeatherCard
             {...itemProps}
+            key={itemProps.id}
             isActive={key === activeForecast}
             onClick={onWeatherCardClick}
           />
