@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import ScrollableList from '../../components/ScrollableList';
 
 const dummyData = ['first', 'second'];
-const renderDummyChildren = () => dummyData.map((data) => (<div>{data}</div>));
+const renderDummyChildren = () => dummyData.map((data, key) => (<div key={key} >{data}</div>));
 
 describe('ScrollableList', () => {
   it('should render children', () => {
