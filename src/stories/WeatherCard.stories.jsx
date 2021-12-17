@@ -1,5 +1,5 @@
 import React from 'react';
-import WeatherCard from '../components/Forecast/WeatherCard';
+import WeatherCard from '../components/Forecast/WeatherCardList/WeatherCard';
 import { WEATHER_TYPES } from '../utils/constants';
 
 export const Clear = () => {
