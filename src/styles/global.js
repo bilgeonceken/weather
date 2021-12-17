@@ -9,6 +9,11 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
   }
 
+  p {
+    margin: 0;
+    font-size: 47.78px;
+  }
+
   body {
     margin: 0;
     background: #262A59;

@@ -1,79 +1,130 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useSelector } from 'react-redux';
-import { getActiveForecast } from '../../store/selectors';
-import { weatherDataMap } from '../../utils/constants';
+import { number, oneOf, string } from 'prop-types';
+import { weatherDataMap, WEATHER_TYPES } from '../../utils/constants';
+import { indigo30, white } from '../../styles/colors';
 
-const ScHeader = styled.div`
+const ScHeader = styled.header`
   display: flex;
   justify-content: space-between;
-  flex-basis: 100%;
-  max-width: 1627px;
-  padding: 30px 20px 0 20px;
+  padding: 0 146px;
+  margin-bottom: 144px;
+  height: 344px;
+  width: 100%;
+  color: ${white};
 
-  .fcIcon {
-    max-width: 328px;
-  }
-
-  .fcCenter {
+  article {
     display: flex;
-    flex-direction: column;
-    max-width: 448px;
-    width: 100%;
 
-    .fcDataUpper {
+    img {
+      max-width: 328px;
+    }
+
+    &.left {
       display: flex;
-      flex-wrap: nowrap;
       justify-content: space-between;
-      font-size: 47.78px;
-      color: #A8AABD;
+      max-width: 919px;
+      width: 100%;
+      margin-right: 142px;
+
+      .temp {
+        display: flex;
+        flex-direction: column;
+
+        &-upper {
+          display: flex;
+          justify-content: space-between;
+          width: 448px;
+          color: ${indigo30};
+        }
+
+        &-lower {
+          font-weight: 700;
+          font-size: 246.51px;
+          text-align: center;
+        }
+      }
     }
 
-    .fcTempCurrent {
-      font-size: 246.512px;
-      font-weight: 700;
-      text-align: center;
+    &.right {
+      max-width: 566px;
+      height: 344px;
+      width: 100%;
+
+      .data {
+        display: flex;
+        flex-direction: column;
+
+        &-upper {
+          display: flex;
+          justify-content: flex-start;
+          margin-bottom: 32px;
+          color: ${indigo30};
+        }
+
+        &-lower {
+          font-weight: 700;
+          text-align: left;
+
+          p {
+            font-size: 99.07px;
+          }
+        }
+      }
     }
   }
 
-  .fcRight {
-    display: flex;
-    flex-direction: column;
-
-    .fcLocation {
-      font-size: 47.78px;
-      color: #A8AABD;
-    }
-
-    .fcDate {
-      font-size: 99.068px;
-      max-width: 530px;
-    }
-  }
 `;
 
-const Header = () => {
-  const { temp, tempMin, tempMax, weather, date, location } = useSelector(getActiveForecast);
+const Header = ({ temperature, tempMin, tempMax, weather, date, location }) => {
   const weatherConstants = weatherDataMap[weather] || {};
   const { text: weatherText, icon: weatherIcon } = weatherConstants;
+  const [weekday, day, month] = date.split(' ');
   return (
     <ScHeader>
-      <img className="fcIcon" alt={`${weatherText} Icon`} src={weatherIcon} />
-      <div className="fcCenter">
-        <div className="fcDataUpper">
-          <div data-testid="fcWeather" className="fcWeather">{weather}</div>
-          <div className="fcHighLow">{`${tempMin}°/${tempMax}°`}</div>
+      <article className="left">
+        <img alt={`${weatherText} Icon`} src={weatherIcon} />
+        <div className="temp">
+          <div className="temp-upper">
+            <p className="temp-weather">{weather}</p>
+            <p className="temp-highlow">{`${tempMin}° / ${tempMax}°`}</p>
+          </div>
+          <div className="temp-lower">
+            {`${temperature}°`}
+          </div>
         </div>
-        <div data-testid="fcTempCurrent" className="fcTempCurrent">
-          {`${temp}°`}
+      </article>
+      <article className="right">
+        <div className="data">
+          <div className="data-upper">
+            <p className="data-location">{location}</p>
+          </div>
+          <div className="data-lower">
+            <p>{weekday}</p>
+            <p>{`${day} ${month}`}</p>
+          </div>
         </div>
-      </div>
-      <div className="fcRight">
-        <div data-testid="fcLocation" className="fcLocation">{location}</div>
-        <div className="fcDate">{date}</div>
-      </div>
+      </article>
     </ScHeader>
   );
+};
+
+Header.propTypes = {
+  temperature: number,
+  tempMin: number,
+  tempMax: number,
+  weather: oneOf(Object.keys(WEATHER_TYPES)),
+  date: string,
+  location: string,
+};
+
+Header.defaultProps = {
+  temperature: 0,
+  tempMin: 0,
+  tempMax: 0,
+  weather: WEATHER_TYPES.Clouds,
+  date: '',
+  location: '',
 };
 
 export default Header;
