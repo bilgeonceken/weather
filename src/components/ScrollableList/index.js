@@ -4,6 +4,8 @@ import Styled from 'styled-components';
 
 const ScScrollableList = Styled.ul`
     display: flex;
+    margin: 0;
+    padding: 0;
     overflow-x: auto;
 
     &::-webkit-scrollbar {
