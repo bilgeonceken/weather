@@ -1,5 +1,5 @@
-import { arrayOf, node, oneOf } from 'prop-types';
 import React from 'react';
+import { arrayOf, elementType, node, oneOfType } from 'prop-types';
 import Styled from 'styled-components';
 
 const ScScrollableList = Styled.ul`
@@ -22,7 +22,12 @@ const ScrollableList = ({ children }) => {
 };
 
 ScrollableList.propTypes = {
-  children: oneOf([node, arrayOf([node])]),
+  children: oneOfType([
+    elementType,
+    arrayOf([elementType]),
+    node,
+    arrayOf([node]),
+  ]),
 };
 
 ScrollableList.defaultProps = {
