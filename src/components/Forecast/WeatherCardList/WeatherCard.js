@@ -4,6 +4,7 @@ import {
 } from 'prop-types';
 import styled from 'styled-components';
 import { weatherDataMap, WEATHER_TYPES } from '../../../utils/constants';
+import { indigo30, indigo70, indigo80, bgBlue, white } from '../../../styles/colors';
 
 const ScWeatherCard = styled.div`
   display: flex;
@@ -14,10 +15,10 @@ const ScWeatherCard = styled.div`
   justify-content: space-between;
   padding: 32px 0;
   border-radius: 6px;
-  background: ${({ isActive }) => (isActive ? '#51557A' : '#262A59')};
+  background: ${({ isActive }) => (isActive ? indigo70 : bgBlue)};
 
   &:hover {
-    background: ${({ isActive }) => (isActive ? '#51557A' : '#434668')};;
+    background: ${({ isActive }) => (isActive ? indigo70 : indigo80)};;
   }
 
   img {
@@ -31,14 +32,14 @@ const ScWeatherCard = styled.div`
     font-size: 82px;
     line-height: 96px;
     text-align: center;
-    color: #fff;
+    color: ${white};
   }
 
   .timestamp {
     margin: 0;
     width: 100%;
     line-height: 56px;
-    color: #A8AABD;
+    color: ${indigo30};
     font-size: 47.78px;
     text-align: center;
   }
