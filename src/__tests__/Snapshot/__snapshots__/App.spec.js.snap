@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`watchFetchForecast renders correctly 1`] = `
+<div>
+  <div
+    className="sc-hKwDye bpuQHS"
+  >
+    <header
+      className="sc-bdvvtL hcnYhO"
+    >
+      <article
+        className="left"
+      >
+        <img
+          alt="Clear Icon"
+          src="fileurl"
+        />
+        <div
+          className="temp"
+        >
+          <div
+            className="temp-upper"
+          >
+            <p
+              className="temp-weather"
+            >
+              Clear
+            </p>
+            <p
+              className="temp-highlow"
+            >
+              8° / 13°
+            </p>
+          </div>
+          <div
+            className="temp-lower"
+          >
+            0°
+          </div>
+        </div>
+      </article>
+      <article
+        className="right"
+      >
+        <div
+          className="data"
+        >
+          <div
+            className="data-upper"
+          >
+            <p
+              className="data-location"
+            >
+              Altstadt
+            </p>
+          </div>
+          <div
+            className="data-lower"
+          >
+            <p>
+              Thursday
+            </p>
+            <p>
+              16. February
+            </p>
+          </div>
+        </div>
+      </article>
+    </header>
+    <ul
+      className="sc-gsDKAQ boIDyf"
+    >
+      <div
+        className="sc-dkPtRN itRkwX"
+        onClick={[Function]}
+      >
+        <span
+          className="timestamp"
+        >
+          12:00
+        </span>
+        <img
+          alt="Clear Icon"
+          src="fileurl"
+        />
+        <p>
+          6°
+        </p>
+      </div>
+      <div
+        className="sc-dkPtRN fnkRDf"
+        onClick={[Function]}
+      >
+        <span
+          className="timestamp"
+        >
+          15:00
+        </span>
+        <img
+          alt="Clear Icon"
+          src="fileurl"
+        />
+        <p>
+          6°
+        </p>
+      </div>
+    </ul>
+  </div>
+</div>
+`;
