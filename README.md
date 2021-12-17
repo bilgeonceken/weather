@@ -10,18 +10,20 @@ Since the sample openweathermap url do not send necessary headers, we will be us
 ###  Start in development mode
 
 We need to run two processes simultaneously:
-#### Webpack dev server
-```
-$ nvm use
-$ yarn
-$ yarn start
-```
+
 #### Flask dev server
 ```
 $ python3 -m venv venv
 $ . venv/bin/activate
 $ pip3 install -r requirements.txt
 $ flask run
+```
+
+#### Webpack dev server
+```
+$ nvm use
+$ yarn
+$ yarn start
 ```
 
 Now the app should be accessible from ```localhost:3000``` (webpack dev server) or ```localhost:5000``` (flask dev server)
