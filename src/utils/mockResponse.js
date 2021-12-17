@@ -1338,3 +1338,405 @@ export const mockResponseData = {
      "country":"none"
   }
 }
+
+export const mockStateGeneratedFromMockResponseData = {
+  location: 'Altstadt',
+  weatherData: [
+    {
+      id: '1487246400',
+      order: 0,
+      temperature: 13,
+      tempMin: 8,
+      tempMax: 13,
+      weather: 'Clear',
+      location: 'Altstadt',
+      time: '12:00',
+      date: 'Thursday 16. February'
+    },
+    {
+      id: '1487257200',
+      order: 1,
+      temperature: 12,
+      tempMin: 8,
+      tempMax: 12,
+      weather: 'Clear',
+      location: 'Altstadt',
+      time: '15:00',
+      date: 'Thursday 16. February'
+    },
+    {
+      id: '1487268000',
+      order: 2,
+      temperature: 3,
+      tempMin: 1,
+      tempMax: 3,
+      weather: 'Clear',
+      location: 'Altstadt',
+      time: '18:00',
+      date: 'Thursday 16. February'
+    },
+    {
+      id: '1487278800',
+      order: 3,
+      temperature: -1,
+      tempMin: -2,
+      tempMax: -1,
+      weather: 'Clear',
+      location: 'Altstadt',
+      time: '21:00',
+      date: 'Thursday 16. February'
+    },
+    {
+      id: '1487289600',
+      order: 4,
+      temperature: 0,
+      tempMin: 0,
+      tempMax: 0,
+      weather: 'Clouds',
+      location: 'Altstadt',
+      time: '00:00',
+      date: 'Friday 17. February'
+    },
+    {
+      id: '1487300400',
+      order: 5,
+      temperature: 2,
+      tempMin: 2,
+      tempMax: 2,
+      weather: 'Rain',
+      location: 'Altstadt',
+      time: '03:00',
+      date: 'Friday 17. February'
+    },
+    {
+      id: '1487311200',
+      order: 6,
+      temperature: 3,
+      tempMin: 3,
+      tempMax: 3,
+      weather: 'Rain',
+      location: 'Altstadt',
+      time: '06:00',
+      date: 'Friday 17. February'
+    },
+    {
+      id: '1487322000',
+      order: 7,
+      temperature: 3,
+      tempMin: 3,
+      tempMax: 3,
+      weather: 'Rain',
+      location: 'Altstadt',
+      time: '09:00',
+      date: 'Friday 17. February'
+    },
+    {
+      id: '1487332800',
+      order: 8,
+      temperature: 5,
+      tempMin: 5,
+      tempMax: 5,
+      weather: 'Rain',
+      location: 'Altstadt',
+      time: '12:00',
+      date: 'Friday 17. February'
+    },
+    {
+      id: '1487343600',
+      order: 9,
+      temperature: 3,
+      tempMin: 3,
+      tempMax: 3,
+      weather: 'Rain',
+      location: 'Altstadt',
+      time: '15:00',
+      date: 'Friday 17. February'
+    },
+    {
+      id: '1487354400',
+      order: 10,
+      temperature: 2,
+      tempMin: 2,
+      tempMax: 2,
+      weather: 'Rain',
+      location: 'Altstadt',
+      time: '18:00',
+      date: 'Friday 17. February'
+    },
+    {
+      id: '1487365200',
+      order: 11,
+      temperature: 2,
+      tempMin: 2,
+      tempMax: 2,
+      weather: 'Rain',
+      location: 'Altstadt',
+      time: '21:00',
+      date: 'Friday 17. February'
+    },
+    {
+      id: '1487376000',
+      order: 12,
+      temperature: 1,
+      tempMin: 1,
+      tempMax: 1,
+      weather: 'Rain',
+      location: 'Altstadt',
+      time: '00:00',
+      date: 'Saturday 18. February'
+    },
+    {
+      id: '1487386800',
+      order: 13,
+      temperature: 1,
+      tempMin: 1,
+      tempMax: 1,
+      weather: 'Rain',
+      location: 'Altstadt',
+      time: '03:00',
+      date: 'Saturday 18. February'
+    },
+    {
+      id: '1487397600',
+      order: 14,
+      temperature: 1,
+      tempMin: 1,
+      tempMax: 1,
+      weather: 'Rain',
+      location: 'Altstadt',
+      time: '06:00',
+      date: 'Saturday 18. February'
+    },
+    {
+      id: '1487408400',
+      order: 15,
+      temperature: 2,
+      tempMin: 2,
+      tempMax: 2,
+      weather: 'Rain',
+      location: 'Altstadt',
+      time: '09:00',
+      date: 'Saturday 18. February'
+    },
+    {
+      id: '1487419200',
+      order: 16,
+      temperature: 4,
+      tempMin: 4,
+      tempMax: 4,
+      weather: 'Clear',
+      location: 'Altstadt',
+      time: '12:00',
+      date: 'Saturday 18. February'
+    },
+    {
+      id: '1487430000',
+      order: 17,
+      temperature: 5,
+      tempMin: 5,
+      tempMax: 5,
+      weather: 'Clear',
+      location: 'Altstadt',
+      time: '15:00',
+      date: 'Saturday 18. February'
+    },
+    {
+      id: '1487440800',
+      order: 18,
+      temperature: 0,
+      tempMin: 0,
+      tempMax: 0,
+      weather: 'Clear',
+      location: 'Altstadt',
+      time: '18:00',
+      date: 'Saturday 18. February'
+    },
+    {
+      id: '1487451600',
+      order: 19,
+      temperature: -2,
+      tempMin: -2,
+      tempMax: -2,
+      weather: 'Clear',
+      location: 'Altstadt',
+      time: '21:00',
+      date: 'Saturday 18. February'
+    },
+    {
+      id: '1487462400',
+      order: 20,
+      temperature: -4,
+      tempMin: -4,
+      tempMax: -4,
+      weather: 'Clear',
+      location: 'Altstadt',
+      time: '00:00',
+      date: 'Sunday 19. February'
+    },
+    {
+      id: '1487473200',
+      order: 21,
+      temperature: -5,
+      tempMin: -5,
+      tempMax: -5,
+      weather: 'Clear',
+      location: 'Altstadt',
+      time: '03:00',
+      date: 'Sunday 19. February'
+    },
+    {
+      id: '1487484000',
+      order: 22,
+      temperature: -6,
+      tempMin: -6,
+      tempMax: -6,
+      weather: 'Clear',
+      location: 'Altstadt',
+      time: '06:00',
+      date: 'Sunday 19. February'
+    },
+    {
+      id: '1487494800',
+      order: 23,
+      temperature: -1,
+      tempMin: -1,
+      tempMax: -1,
+      weather: 'Clear',
+      location: 'Altstadt',
+      time: '09:00',
+      date: 'Sunday 19. February'
+    },
+    {
+      id: '1487505600',
+      order: 24,
+      temperature: 4,
+      tempMin: 4,
+      tempMax: 4,
+      weather: 'Clear',
+      location: 'Altstadt',
+      time: '12:00',
+      date: 'Sunday 19. February'
+    },
+    {
+      id: '1487516400',
+      order: 25,
+      temperature: 4,
+      tempMin: 4,
+      tempMax: 4,
+      weather: 'Clear',
+      location: 'Altstadt',
+      time: '15:00',
+      date: 'Sunday 19. February'
+    },
+    {
+      id: '1487527200',
+      order: 26,
+      temperature: -1,
+      tempMin: -1,
+      tempMax: -1,
+      weather: 'Clear',
+      location: 'Altstadt',
+      time: '18:00',
+      date: 'Sunday 19. February'
+    },
+    {
+      id: '1487538000',
+      order: 27,
+      temperature: -4,
+      tempMin: -4,
+      tempMax: -4,
+      weather: 'Clear',
+      location: 'Altstadt',
+      time: '21:00',
+      date: 'Sunday 19. February'
+    },
+    {
+      id: '1487548800',
+      order: 28,
+      temperature: -5,
+      tempMin: -5,
+      tempMax: -5,
+      weather: 'Clear',
+      location: 'Altstadt',
+      time: '00:00',
+      date: 'Monday 20. February'
+    },
+    {
+      id: '1487559600',
+      order: 29,
+      temperature: -6,
+      tempMin: -6,
+      tempMax: -6,
+      weather: 'Clear',
+      location: 'Altstadt',
+      time: '03:00',
+      date: 'Monday 20. February'
+    },
+    {
+      id: '1487570400',
+      order: 30,
+      temperature: -6,
+      tempMin: -6,
+      tempMax: -6,
+      weather: 'Clear',
+      location: 'Altstadt',
+      time: '06:00',
+      date: 'Monday 20. February'
+    },
+    {
+      id: '1487581200',
+      order: 31,
+      temperature: 0,
+      tempMin: 0,
+      tempMax: 0,
+      weather: 'Clear',
+      location: 'Altstadt',
+      time: '09:00',
+      date: 'Monday 20. February'
+    },
+    {
+      id: '1487592000',
+      order: 32,
+      temperature: 6,
+      tempMin: 6,
+      tempMax: 6,
+      weather: 'Clear',
+      location: 'Altstadt',
+      time: '12:00',
+      date: 'Monday 20. February'
+    },
+    {
+      id: '1487602800',
+      order: 33,
+      temperature: 6,
+      tempMin: 6,
+      tempMax: 6,
+      weather: 'Clear',
+      location: 'Altstadt',
+      time: '15:00',
+      date: 'Monday 20. February'
+    },
+    {
+      id: '1487613600',
+      order: 34,
+      temperature: 1,
+      tempMin: 1,
+      tempMax: 1,
+      weather: 'Clouds',
+      location: 'Altstadt',
+      time: '18:00',
+      date: 'Monday 20. February'
+    },
+    {
+      id: '1487624400',
+      order: 35,
+      temperature: -1,
+      tempMin: -1,
+      tempMax: -1,
+      weather: 'Clouds',
+      location: 'Altstadt',
+      time: '21:00',
+      date: 'Monday 20. February'
+    }
+  ]
+}
