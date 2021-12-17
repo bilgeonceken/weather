@@ -26,7 +26,7 @@ export function* watchFetchForecast() {
     return {
       id: `${id}`,
       order: key,
-      temp: convertKtoC(temp),
+      temperature: convertKtoC(temp),
       tempMin: convertKtoC(tempMin),
       tempMax: convertKtoC(tempMax),
       weather,

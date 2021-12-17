@@ -30,5 +30,6 @@ module.exports = {
     'consistent-return': 0,
     'no-shadow': 0,
     'object-curly-newline': 0,
+    'react/jsx-props-no-spreading': 0,
   },
 };

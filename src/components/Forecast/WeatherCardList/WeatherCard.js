@@ -3,7 +3,7 @@ import {
   bool, oneOf, string, number, func,
 } from 'prop-types';
 import styled from 'styled-components';
-import { weatherDataMap, WEATHER_TYPES } from '../../utils/constants';
+import { weatherDataMap, WEATHER_TYPES } from '../../../utils/constants';
 
 const ScWeatherCard = styled.div`
   display: flex;
