@@ -72,6 +72,7 @@ exports[`watchFetchForecast renders correctly 1`] = `
     >
       <div
         className="sc-dkPtRN itRkwX"
+        data-testid="weatherCard"
         onClick={[Function]}
       >
         <span
@@ -89,6 +90,7 @@ exports[`watchFetchForecast renders correctly 1`] = `
       </div>
       <div
         className="sc-dkPtRN fnkRDf"
+        data-testid="weatherCard"
         onClick={[Function]}
       >
         <span

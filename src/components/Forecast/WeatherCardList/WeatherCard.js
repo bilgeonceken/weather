@@ -51,7 +51,11 @@ const WeatherCard = ({
   const { icon, text } = weatherDataMap[weather];
   const handleClick = () => onClick(order);
   return (
-    <ScWeatherCard onClick={handleClick} isActive={isActive}>
+    <ScWeatherCard
+      onClick={handleClick}
+      isActive={isActive}
+      data-testid="weatherCard"
+    >
       <span className="timestamp">{time}</span>
       <img alt={`${text} Icon`} src={icon} />
       <p>{`${temperature}°`}</p>
